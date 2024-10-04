@@ -1,0 +1,140 @@
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Color del texto */
+    font-family: 'Georgia', serif;
+    display: flex;
+    flex-direction: column; /* Para que el contenido se apile verticalmente */
+    align-items: center; /* Alineación centrada en la pantalla */
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    margin: 20px; /* Espacio general alrededor del contenedor */
+}
+
+.top-image-wrapper {
+    display: flex; /* Para alinear la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin-bottom: 15px; /* Espacio entre la imagen y el título */
+}
+
+.top-image {
+    width: 30%; /* Ancho responsivo */
+    max-width: 300px; /* Tamaño máximo */
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 50px; /* Se aumenta el margen inferior para crear más espacio con los recuadros */
+    margin-top: 0; /* Elimina el margen superior para estar más cerca del borde */
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap; /* Las tarjetas se ajustarán automáticamente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas en el contenedor */
+    margin: 50px; /* Espacio lateral */
+}
+
+.item-card {
+    border: 2px solid #fff; /* Borde blanco para el recuadro */
+    padding: 20px; /* Aumenta el padding para mayor espacio interno */
+    flex: 1 1 calc(33% - 40px); /* Ocupa el 33% del contenedor para hacer las tarjetas más grandes */
+    max-width: 300px; /* Tamaño máximo incrementado */
+    text-align: center;
+    background-color: #222; /* Fondo oscuro para los recuadros */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+}
+
+.item-image {
+    width: 100%; /* Ocupa el ancho completo del recuadro */
+    height: auto;
+}
+
+.item-info {
+    margin-top: 10px;
+}
+
+.item-name {
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    margin: 10px 0; /* Espacio mayor entre el nombre y otros elementos */
+    color: #fff; /* Color del nombre del producto */
+}
+
+.item-price {
+    font-size: 1.2rem; /* Aumenta el tamaño del precio */
+    color: #aaa; /* Color más claro para el precio */
+}
+
+.button-wrapper {
+    display: flex; /* Para centrar el contenido de los botones */
+    justify-content: center; /* Centra horizontalmente los botones dentro del contenedor */
+    margin-bottom: 15px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente el contenido del botón */
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.3rem; /* Aumenta el tamaño de la fuente del botón */
+    padding: 12px 25px; /* Aumenta el padding del botón */
+    width: 100%;
+    cursor: pointer;
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.button img {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.button.disabled {
+    color: gray;
+    border-color: gray;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    background-color: #fff; /* Cambia el fondo al pasar el mouse */
+    color: #000; /* Cambia el texto al pasar el mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .item-card {
+        flex: 1 1 calc(33% - 30px); /* Las tarjetas se hacen un poco más grandes en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .item-card {
+        flex: 1 1 calc(50% - 40px); /* 2 tarjetas por fila en pantallas pequeñas */
+        max-width: 200px; /* Ajusta el tamaño de los recuadros en pantallas pequeñas */
+    }
+
+    .top-image {
+        width: 50%; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .item-card {
+        flex: 1 1 calc(100% - 40px); /* Una tarjeta por fila en pantallas muy pequeñas */
+        max-width: 300px; /* Se asegura de que las tarjetas tengan un buen tamaño en pantallas pequeñas */
+    }
+}
